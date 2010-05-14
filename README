@@ -1,6 +1,12 @@
 # Created by Zheng-Yu Chen on 10-5-14.
 # Copyright 2010 Cabooshine. All rights reserved.
 
+== 提交代码设置
+
+   $ git remote add artist git@github.com:vvdpzz/artist.git
+   以后提交代码直接：$ git push artist <branch>
+   例如： $ git push artist master
+
 == 公用帐号使用方法
 
 1、首先生成SSH keys
