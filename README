@@ -1,6 +1,18 @@
 # Created by Zheng-Yu Chen on 10-5-14.
 # Copyright 2010 Cabooshine. All rights reserved.
 
+== 公用帐号使用方法
+
+1、首先生成SSH keys
+   $ ssh-keygen -t rsa -C "artistpush@gmail.com"
+   $ vi .ssh/id_rsa.pub
+   将里面的内容（不含新行和空格）拷贝到 Github -> Account Settings -> SSH Public Keys -> Add another public key -> key
+   title留空，然后点 Add key
+
+2、设置个人信息
+   git config --global user.name "Zheng-Yu Chen"
+   git config --global user.email vvdpzz@gmail.com
+
 == 各位兄弟提交代码时注意移除一下文件：
 
 Mac OS X:
