@@ -5,12 +5,10 @@
 </head>
 <body>
 	<% if check_browser_we_supported? -%>
+	<div id="category_bar">
+		<%= yield :category_bar %>
+	</div>
 	<div id="container">
-		<div id="header">
-			<div id="category_bar">
-				<%= yield :category_bar %>
-			</div>
-		</div>
 		<div id="content">
 			<%= yield %>
 		</div>
@@ -19,7 +17,7 @@
 	<div id="shortcut_bar">
 		<div class="logo"></div>
 		<ul class="shortcut_bar_menu">
-			<li> ☺ <%=current_user.name%></li>
+			<li><%= gravatar_for current_user , :size=> 28 %><%= current_user.name %></li>
 			<li><%= link_to '问答', questions_url %></li>
 			<li><%= link_to '消息', user_messages_url(current_user) %></li>
 		</ul>
