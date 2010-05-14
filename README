@@ -27,14 +27,23 @@
 
 == 各位兄弟提交代码时注意移除一下文件：
 
-Mac OS X:
-git rm -f *.DS_Store
+   Mac OS X:
+   $ git rm -f *.DS_Store
 
-Linux NetBeans:
-git rm -rf nbproject
+   Linux NetBeans:
+   $ git rm -rf nbproject
 
-最后再删除日志文件：
-git rm -rf log
+   最后再删除日志文件：
+   $ git rm -rf log
+
+   还有种一劳永逸的方法：
+   $ vi ~/.gitignore
+   内容为：
+   .DS_Store
+   /log
+   /nbproject
+   然后：
+   $ git config --global core.excludesfile ~/.gitignore
 
 == 关于代码的初次配置
 
