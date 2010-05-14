@@ -1,0 +1,8 @@
+<% form_for @user do |form| %>
+	<%= form.error_messages %>
+	<%= render :partial => "name_field", :locals => { :form => form } %>
+	<%= render :partial => "email_field", :locals => { :form => form } %>
+	<%= render :partial => "password_field", :locals => { :form => form, :field => "password", :field_title => "Password"} %>
+	<%= render :partial => "password_field", :locals => { :form => form, :field => "password_confirmation", :field_title => "Confirm" } %>
+	<%= form.submit :"Register" %>
+<% end %>

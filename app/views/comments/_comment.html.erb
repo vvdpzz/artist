@@ -1,0 +1,5 @@
+<% form_for([@question,answer,@comment] ,:html => {:id => "new_answer_comment_#{answer.id}",:class=>"new_answer_comment"}) do |f| -%>
+    <%= f.text_area :body, :cols => 70, :rows => 2 %>
+    <%= f.submit button_name %>
+    <%= button_to_function '取消',"commentyboxHide(#{answer.id})"%>
+<% end %>

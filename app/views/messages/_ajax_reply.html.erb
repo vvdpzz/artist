@@ -1,0 +1,11 @@
+<div class="NSreplybox" id="NSreplybox_<%= message.id %>" style="display:none;">
+	<div class="avatar">
+		<%= gravatar_for message.user %>
+	</div>
+	<div class="NSreply">
+		<%= render :partial => @reply = Reply.new, :locals => { :user => message.user,
+																:message => message,
+																:new_reply_id => "new_reply_#{message.id}",
+																:button_name => '回复' } %>
+	</div>
+</div>

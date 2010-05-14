@@ -1,0 +1,6 @@
+<%= error_messages_for :question %>
+
+<%= render :partial => @question, :locals => { :button_name => "Edit Your Question"} %>
+
+<%= link_to 'Show', @question %> |
+<%= link_to 'Back', questions_path %>

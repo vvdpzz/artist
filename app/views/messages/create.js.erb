@@ -1,0 +1,2 @@
+$('#new_message')[0].reset();
+$('#NSmessages').prepend("<%= escape_javascript(render :partial => "show_message", :locals => { :show_message => @message }) %>");

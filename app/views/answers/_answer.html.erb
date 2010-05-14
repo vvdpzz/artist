@@ -1,0 +1,4 @@
+<% form_for([@question,@answer]) do |f| -%>
+    <%= f.text_area :body, :class => "replyTextArea" %>
+    <%= f.submit button_name , :class => "button_effect" %>
+<% end -%>

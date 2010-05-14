@@ -1,0 +1,4 @@
+$('#new_reply_<%=  @message.id %>')[0].reset();
+$('#NSreplybox_<%=  @message.id %>').hide();
+document.getElementById('NSreplylink_' + <%=  @message.id %>).style.background = 'none';
+$('#repliesStream_<%=  @message.id %>').append("<%= escape_javascript(render :partial => "replies/show_reply", :locals => { :show_reply => @reply }) %>");

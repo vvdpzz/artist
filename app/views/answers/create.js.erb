@@ -1,0 +1,2 @@
+$('#answers').append("<%= escape_javascript(render :partial => "answers/show_answer", :locals => { :show_answer => @answer }) %>");
+$('#new_answer')[0].reset();

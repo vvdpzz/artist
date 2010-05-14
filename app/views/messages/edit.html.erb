@@ -1,0 +1,6 @@
+<h1>Editing message</h1>
+
+<%= render :partial => @message, :locals => { :button_name => "Update"} %>
+
+<%= link_to 'Show', [@user,@message] %> |
+<%= link_to 'Back', user_messages_path(@user) %>

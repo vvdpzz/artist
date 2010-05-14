@@ -1,0 +1,25 @@
+<p>
+	<h3>Details</h3>
+  <%="#{@user.name}: "+@message.Description %>
+</p>
+
+<% unless @message.replies.empty? %>
+  <h3>Replies</h3>
+  <% @message.replies.each do |reply| %>
+	<p>
+		<%= link_to "#{reply.user_name}", user_messages_url(User.find_by_name(reply.user_name)) %>: 
+  	<%= reply.Description %>
+	</p>
+	<p>
+			<%= time_ago_in_words reply.created_at %> ago
+	</p>
+  <% end %>
+<% end %>
+
+<h3>New Reply</h3>
+<%= render :partial => @reply = Reply.new, :locals => { :button_name => 'Reply'} %>
+<%= link_to 'Back',  user_messages_path %>
+<% if user_id == @user.id -%>
+	| <%= link_to 'Edit', [:edit,@user,@message] %> | 
+	<%= link_to 'Destroy', [@user,@message], :confirm => 'Are you sure?', :method => :delete %>
+<% end -%>

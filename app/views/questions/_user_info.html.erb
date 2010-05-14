@@ -1,0 +1,15 @@
+<div class="user_info_border">
+	<div class="user_info">
+		<div class="user_info_grid">
+			<div class="gravatar">
+				<%= gravatar_for who.user %>			
+			</div>
+			<div class="user_name">
+				<%= who.user.name %>	
+			</div>
+		</div>
+		<div class="respond_time">
+			<%= "答于 #{time_ago_in_words who.created_at}前" %>
+		</div>
+	</div>
+</div>

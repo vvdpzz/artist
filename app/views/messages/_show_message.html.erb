@@ -1,0 +1,34 @@
+<div class="NSmessage" id="NSmessage_<%= show_message.id %>">
+	<div class="NSinfoStream">
+		<div class="avatar">
+			<%= gravatar_for show_message.user %>
+		</div>
+		<div class="textStream">
+			<div class="topStream">
+				<div class="name">
+					<%= link_to show_message.user.name, user_messages_url(show_message.user) %>
+				</div>
+				<div class="timeago">
+					<%= time_ago_in_words show_message.created_at %>前
+				</div>
+			</div>
+			<div class="Description">
+				<%= show_message.Description %>
+			</div>
+			<div class="repliesStream" id="repliesStream_<%= show_message.id %>">
+				<% if show_message.replies.size > 0 %>
+						<%= render :partial => "replies/show_reply", :collection => show_message.replies %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="NSfunctionStream">
+		<ul class="NSreply_menus">
+			<li><%= link_to "#{image_tag('/images/comment.gif',:border => 0)}回复",
+						"javascript:void()",
+						:onclick => "replyboxShow(#{show_message.id});",
+						:id => "NSreplylink_#{show_message.id}" %></li>
+		</ul>
+		<%= render :partial => "ajax_reply", :locals => { :message => show_message} %>
+	</div>
+</div>

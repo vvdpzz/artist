@@ -1,0 +1,14 @@
+<div class="NSnewNote">
+	<div class="NSavatar">
+		<%= gravatar_for @user %>
+	</div>
+	<div class="NSnoteTriangle">
+	</div>
+	<div class="NSnote">
+		<% form_for([@user,@message]) do |f| %>
+		    <%= f.text_area :Description, :class => "DescriptionArea" %>
+                    <div style="clear: both"></div>
+		    <%= f.submit button_name, :class => "button_effect"%>
+		<% end %>
+	</div>
+</div>

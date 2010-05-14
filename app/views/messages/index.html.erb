@@ -1,0 +1,4 @@
+<%= render :partial => @message = Message.new, :locals => { :button_name => 'Note'} %>
+<div id="NSmessages">
+	<%= render :partial => "show_message", :collection => @messages %>
+</div>

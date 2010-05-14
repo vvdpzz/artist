@@ -1,0 +1,6 @@
+<% if user_id == @question.user.id %>
+    for( i=0 ; i<$('#answer a.set_right_answer').size(); i++){
+        $('#answer a.set_right_answer').hide();
+    }
+    $('#correct_answer_img_<%= @answer.id %>').html("<%= escape_javascript(image_tag("/images/answer-accepted-on.png")) %>");
+<% end %>

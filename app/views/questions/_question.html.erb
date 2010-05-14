@@ -1,0 +1,7 @@
+<% form_for(@question) do |f| %>
+	<%= f.text_field :title, :class => "textfield_effect" %>
+	<%= f.text_area :detail, :class => "textarea_effect" %>
+	<%= f.text_field :tag_list, :class => "textfield_effect_for_tags" %>
+        <div style="clear: both"></div>
+	<%= f.submit button_name, :class => "button_effect" %>
+<% end %>

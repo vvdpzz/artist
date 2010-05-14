@@ -1,0 +1,7 @@
+<% form_for([user,message,@reply], :html => { :id => new_reply_id }) do |f| %>
+	<%= f.text_area :Description, :class => "ReplyArea" %>
+	<div class="ok_cancel_button">
+		<%= f.submit button_name, :class => "button_effect" %>
+		<%=  button_to_function "取消", "replyboxHide(#{message.id})", :class => "button_effect" %>
+	</div>
+<% end %>
