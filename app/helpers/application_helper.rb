@@ -17,39 +17,36 @@ module ApplicationHelper
       return false
     end 
   end
+  
+  private
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
 
-protected
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.user
+  end
 
-    def login_required
-      logged_in? || access_denied
+  def login_required
+    unless current_user
+      redirect_to sign_in_path
+      return false
     end
-    
-    def access_denied
-      redirect_to(:controller => "sessions", :action => "new")
-      false
+  end
+
+  def require_no_user
+    if current_user
+      redirect_to root_url
+      return false
     end
-    
-    def current_user
-      @current_user ||= (login_from_session || false)
-    end
-    
-    alias :logged_in? :current_user
-    
-    def current_user=(new_user)
-      session[:user] = new_user && new_user.id
-      @current_user = new_user
-    end
-    
-    def login_from_session
-      self.current_user = User.find_by_id(session[:user]) if session[:user]
-    end
-    
-    def user_name
-      User.find_by_id(session[:user]).name if session[:user]
-    end
-    
-    def user_id
-      session[:user]
-    end
+  end
+  
+  alias :logged_in? :current_user
+  
+  def user_id
+    current_user.id
+  end
     
 end
