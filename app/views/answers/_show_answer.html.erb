@@ -17,19 +17,7 @@
                                             :question_id => show_answer.question.id,
                                             :answer_id => show_answer.id}, {:class => "vote_down_effect"} %>
                             <div id="correct_answer_img_<%= show_answer.id %>" class="correct_answer">
-								<% if  show_answer.question.correct_answer != 0 %>
-									<% if  show_answer.question.correct_answer == show_answer.id %>
-										<%= image_tag("/images/answer-accepted-on.png", :width => 30)%>
-									<% end %>
-								<% else  %>
-									<% if user_id == show_answer.question.user.id %>
-										<%= link_to "",
-													{ :action => :set_correct_answer, :controller => :questions,
-														:question_id => show_answer.question.id,
-														:answer_id => show_answer.id},
-													{ :class => "set_right_answer", :title=>"设为正确答案"} %>
-									<% end %>
-								<% end %>
+								<%= correct_answer(show_answer) %>
                             </div>
                   </div>
 	</div>
