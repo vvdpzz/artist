@@ -22,12 +22,22 @@
                   </div>
 	</div>
 	<%= render :partial => "questions/user_info", :locals => { :who => show_answer } %>
-	<div id="show_answer_comment_<%=  show_answer.id %>" style="clear: both">
-		<%= render :partial => "comments/show_comment", :collection => show_answer.comments %>
-	</div>
-	<%= link_to "#{image_tag('/images/comment.gif',:border => 0)}回复","javascript:void()",
-		:onclick => "commentboxShow(#{show_answer.id});" %>
-	<div id="NScommentbox_<%= show_answer.id %>" style="display: none">
-		<%= render :partial => @comment = Comment.new, :locals => {:answer  => show_answer,:button_name => '回复'} %>
-	</div>
+        <div style="clear: both"></div>
+        <div class="show_answer_comment">
+            <ul id="show_answer_comment_<%=  show_answer.id %>">
+                    <%= render :partial => "comments/show_comment", :collection => show_answer.comments %>
+            </ul>
+            <% if logged_in? %>
+                <div class="NScomment">
+                    <h1>
+                      <%= link_to "#{image_tag('/images/comment.gif',:border => 0)}回复","javascript:void()",:onclick => "commentboxShow(#{show_answer.id});" %>
+                    </h1>
+                    <div id="NScommentbox_<%= show_answer.id %>" style="display: none" class="NScommentbox">
+                            <%= gravatar_for current_user %>
+                            <%= render :partial => @comment = Comment.new, :locals => {:answer  => show_answer,:button_name => '回复'} %>
+                            <div style="clear: both"></div>
+                    </div>
+                </div>
+           <% end %>
+        </div>
 </div>

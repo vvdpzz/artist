@@ -3,8 +3,8 @@ module AnswersHelper
     html = ""
     if  answer.question.correct_answer != 0
       if answer.question.correct_answer == answer.id
-        return html = "#{image_tag("/images/answer-accepted-on.png", :width => 30)}"
-      end
+			  return html = "#{image_tag("/images/answer-accepted-on.png", :width => 30)}"
+		  end
 		else
 			if user_id == answer.question.user.id
 				 return html = "#{ link_to "",

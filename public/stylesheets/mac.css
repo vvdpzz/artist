@@ -315,6 +315,79 @@ ul.shortcut_bar_menu li img {
 	border-bottom: 1px dotted #CCC;;
 }
 
+.show_answer_comment{
+        margin: 5px 0 0 0;
+        width:100%;
+        border: 1px solid #ccc;
+        -webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        -moz-border-radius-bottomright: 5px;
+}
+.show_answer_comment ul{
+    padding: 0px;
+    margin: 0px;
+}
+.show_answer_comment ul li{
+    padding-left: 5px;
+    margin: 0px;
+    line-height: 25px;
+    list-style-type: none;
+}
+.show_answer_comment ul li span{
+    color: #2170A9;
+}
+.NScomment{
+        width:100%;
+        min-height:23px;
+        background:#e3e9f0;
+        
+}
+
+.NScomment h1{
+    height: 23px;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+}
+
+.NScomment h1 a{
+   margin-left: 50px;
+   text-align: center;
+   color: black;
+   text-decoration: none;
+   display: block;
+   width: 80px;
+   height: 23px;
+   background: #B5C5D7;
+}
+
+.NScommentbox{
+  padding-top: 5px;
+  background: #B5C5D7;
+}
+
+.NScommentbox img{
+    border: 1px solid #aaa;
+    background: #fff;
+    padding: 1px;
+    float: left;
+    margin: 5px 0 0 5px;
+}
+.NScommentbox form.new_answer_comment{
+    margin: 0px;
+    padding: 0px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    display: block;
+    float: left;
+}
+
 #answer_form {
 	float: left;
 	width: 100%;
@@ -322,7 +395,6 @@ ul.shortcut_bar_menu li img {
 }
 
 .button_effect {
-	float: left;
 	margin: 0px 27px 0px 0px;
 	padding: 6px 15px;
 	border: 0;
@@ -511,7 +583,7 @@ ul.shortcut_bar_menu li img {
 }
 
 .ReplyArea {
-	float: left;
+	
 	margin: 7px 0px;
 	width: 600px;
 	height: 80px;
@@ -633,7 +705,7 @@ ul.shortcut_bar_menu li img {
 }
 
 .NSreplybox{
-	float:left;
+    float:left;
     background: #B5C5D7;
     width: 100%;
     padding-bottom: 5px;
