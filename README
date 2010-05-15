@@ -54,8 +54,7 @@
    $ make install
 
 2、安装用到的gems
-   好像是：sudo gems:install
-   运行的时候会提示的～到这步的兄弟配置好后把这里更新下 :)
+   $ sudo rake gems:install
 
 3、配置数据库
    MySQL数据库：testrails
