@@ -1,14 +1,16 @@
 <html>
 <head>
 	<%= stylesheet_link_tag "mac","coderay", "jquery-ui" %>
-	<%= javascript_include_tag ['jquery', 'jquery-ui', 'application'] %> 
+	<%= javascript_include_tag ['jquery', 'jquery-ui', 'application'] %>
 </head>
 <body>
 	<% if check_browser_we_supported? -%>
-	<div id="category_bar">
-		<%= yield :category_bar %>
-	</div>
 	<div id="container">
+			<div id="category_bar">
+				<%= yield :category_bar %>
+				<div id="searchbox">
+				</div>
+			</div>
 		<div id="content">
 			<%= yield %>
 		</div>

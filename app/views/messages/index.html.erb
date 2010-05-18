@@ -1,4 +1,15 @@
-<%= render :partial => @message = Message.new, :locals => { :button_name => 'Note'} %>
-<div id="NSmessages">
+<% content_for :category_bar do %>
+	<ul class="category_bar_menu">
+		<li>消息</li>
+		<li>所有</li>
+		<li>自己</li>
+		<li>图片</li>
+		<li>视频</li>
+	</ul>
+<% end %>
+<div id="messages">
+	<%= render :partial => @message = Message.new, :locals => { :button_name => 'Note'} %>	
 	<%= render :partial => "show_message", :collection => @messages %>
+</div>
+<div id="message_detail">
 </div>

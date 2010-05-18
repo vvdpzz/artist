@@ -1,8 +1,17 @@
 body {
-	font-family: Helvetica, "宋体", sans-serif, Verdana, "Microsoft YaHei", "WenQuanYi Micro Hei";
+	font-family: Helvetica, Verdana, "Microsoft YaHei", "WenQuanYi Micro Hei", "宋体";
 	margin: 0;
 	padding: 0;
 	font-size: 13px;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
 }
 
 #container {
@@ -12,18 +21,16 @@ body {
 }
 
 #content {
-	width: 930px;
 	float: left;
-	padding: 10px 25px 50px 25px;
+	width: 100%;
 	margin-top: 20px;
+	border-right: 1px solid #ccc;
 }
 
 #category_bar {
-	background: url(/images/BlueBanner.png) repeat-x;
-	background-color: rgb(81,118,236);
-	height: 23px;
+	border: 1px solid #ccc;
+	height: 38px;
 	margin: 0;
-	top: 0;
 	width: 100%;
 }
 
@@ -31,14 +38,13 @@ ul.category_bar_menu {
 	float: left;
 	margin: 0px;
 	padding: 0px;
-	font-size: 13px;
-	color: white;	
+	font-size: 15px;
 }
 
 ul.category_bar_menu li {
 	float:left;
-	height: 23px;
-	line-height: 23px;
+	height: 38px;
+	line-height: 38px;
 	list-style-type:none;
 	display:inline;
 	padding: 0px 16px;
@@ -63,7 +69,7 @@ ul.category_bar_menu li a:hover {
 	float: right;
 	width: 160px;
 	margin-top:6px;
-	margin-right: 10px;
+	margin-right: 16px;
 	-webkit-appearance: searchfield;
 }
 
@@ -76,9 +82,8 @@ ul.category_bar_menu li a:hover {
 }
 
 #shortcut_bar {
-	background: url(/images/BlueBanner.png) repeat-x;
-	background-color: rgb(81,118,236);
-	height: 42px;
+	background: url(/images/shortcut.png) repeat-x;
+	height: 41px;
 	margin: 0;
 	bottom: 0;
 	width:100%;
@@ -95,8 +100,8 @@ ul.shortcut_bar_menu {
 
 ul.shortcut_bar_menu li {
 	float:left;
-	height: 42px;
-	line-height: 42px;
+	height: 41px;
+	line-height: 41px;
 	list-style-type:none;
 	display:inline;
 	padding: 0px 16px;
@@ -110,7 +115,7 @@ ul.shortcut_bar_menu li a {
 }
 
 ul.shortcut_bar_menu li a:hover {
-	padding: 5px 14px;
+	padding: 4px 14px;
 	border: 1px solid white;
 	-webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -153,6 +158,7 @@ ul.shortcut_bar_menu li img {
 	float: left;
 	width:526px;
 }
+
 .question_answer_status {
 	float: left;
 	margin-top: 18px;
@@ -260,10 +266,12 @@ ul.shortcut_bar_menu li img {
 	padding: 0px;
 	margin: 0px;
 }
+
 .content_body_right{
 
     
 }
+
 .vote_body {
 	float:right;
 	vertical-align: top;
@@ -324,16 +332,14 @@ ul.shortcut_bar_menu li img {
 .button_effect {
 	float: left;
 	margin: 0px 27px 0px 0px;
-	padding: 6px 15px;
-	border: 0;
-	font-size: 100%;
-	color: white;
-	background: #5B9CD4;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
+	padding: 4px 10px;
+	border: 1px solid #ccc;
+	background: white;
 }
 
 .button_effect:hover {
+	border: 1px solid #72D6FB;
+	color: white;
 	background: #72D6FB;
 }
 
@@ -347,7 +353,6 @@ ul.shortcut_bar_menu li img {
 	width: 100%;
 	height: 120px;
 }
-
 
 .top_menu {
 	float: left;
@@ -501,15 +506,6 @@ ul.shortcut_bar_menu li img {
 	border-bottom: solid 1px #CCC;
 }
 
-.DescriptionArea {
-	float: left;
-	margin-bottom: 10px;
-	width: 600px;
-	height: 80px;
-	border: 1px solid #ccc;
-	font-size: 120%;
-}
-
 .ReplyArea {
 	float: left;
 	margin: 7px 0px;
@@ -519,18 +515,81 @@ ul.shortcut_bar_menu li img {
 	font-size: 13px;
 }
 
-#NSmessages {
+#messages {
+	float: left;
+	width: 390px;
+}
+
+#message_detail {
+	float:right;
+	width: 572px;
+	height:500px;
+	border-left:1px solid #ccc;
+	padding-left: 8px;
+}
+
+.message_top {
 	float:left;
 	width:100%;
+	padding-bottom: 7px;
+	margin-bottom: 7px;
+	border-bottom: 1px solid #ccc;
+}
+
+.message_left {
+	float: left;
+	width: 50px;
+	vertical-align: top;
+}
+
+.message_right {
+	float: left;
+	width: 335px;
+	margin-left: 5px;
+}
+
+.related_information {
+	float: left;
+	width: 100%;
+}
+
+.gravatar {
+	float:left;
+	width:50px;
+	height:50px;
+	margin:0px;
+	padding:0px;
+}
+
+.user_name {
+	float:left;
+}
+
+.user_name a {
+	color: black;
+	font-size: 14px;
+	font-style: bold;
+	text-decoration: none;
+}
+
+.user_name a:hover {
+	text-decoration: underline;
+}
+
+.created_time {
+	float: right;
+	font-size: 11px;
+	color: #5B9CD4;
+}
+
+.message_description {
+	float: left;
 }
 
 .NSnewNote {
 	float:left;
 	width:100%;
-}
-
-.NSavatar {
-	float:left;
+	padding-bottom: 10px;
 }
 
 .NSnoteTriangle {
@@ -546,68 +605,18 @@ ul.shortcut_bar_menu li img {
 
 .NSnote {
 	float:left;
-	margin-left:3px;
+	margin-left:8px;
 }
 
-.NSmessage {
-	float:left;
-	width:100%;
-	margin-top:10px;
-}
-
-.NSinfoStream {
-	float:left;
-	width:100%;
-	border: 1px solid #ccc;
-	border-bottom:none;
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-moz-border-radius-topleft: 5px;
-	-moz-border-radius-topright: 5px;
-}
-
-.avatar {
-	float:left;
-	margin:7px;
-	width:50px;
-}
-
-.NSinfoStream .textStream {
+.DescriptionArea {
 	float: left;
-	margin: 7px 7px 7px 0px;
-	width: 859px;
+	margin-bottom: 10px;
+	width: 332px;
+	height: 80px;
+	border: 1px solid #ccc;
+	font-size: 120%;
 }
 
-.NSinfoStream .topStream {
-	float:left;
-	width:100%;
-}
-
-.NSinfoStream .name {
-	float:left;
-}
-
-.NSinfoStream .Description {
-	float:left;
-	margin-top:3px;
-	clear:left;
-	width:100%;
-}
-
-.NSinfoStream .timeago {
-	float:right;
-	color:gray;
-	font-size:80%;
-}
-
-.NSinfoStream a, #topnav a:visited {
-	color: #2170a9;
-	text-decoration: none;
-}
-
-.NSinfoStream a:hover {
-	text-decoration: underline;
-}
 
 .NSfunctionStream {
 	float:left;
