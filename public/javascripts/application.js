@@ -23,10 +23,13 @@ $(document).ready(function(){
 	$('#new_answer').submitWithAjax();//回答问题
 	$('#new_message').submitWithAjax();//添加新的消息
 	$('#content form.new_reply').submitWithAjax();//消息回复
-        $('#content form.button-to').submitWithAjax();//问题投票
+	$('#content form.button-to').submitWithAjax();//问题投票
 	$('#answer a.set_right_answer').getWithAjax(); //选取正确答案
-        $('#answer form.new_answer_comment').submitWithAjax();//问题答案的评论
-        $('#favorite_question a').getWithAjax();
+	$('#answer form.new_answer_comment').submitWithAjax();//问题答案的评论
+	$('#favorite_question a').getWithAjax();
+	$('h3 a').getWithAjax();
+	$('.mainwords a').getWithAjax();
+	$('#category_bar a').getWithAjax();
 });
 
 

@@ -1,5 +1,9 @@
-<div class="NSshowReply">
-	<%= link_to show_reply.user.name, user_messages_url(show_reply.user) %>
-	<%= show_reply.Description %>
-	<span style="color:gray;cursor:hand;" title="<%= show_reply.created_at.strftime('%b %d, %Y at%l:%M %p') %>"><%= show_reply.created_at.strftime('~%l:%M %p') %></span>
+<% div_for show_reply do %>
+<%= render :partial => "questions/user_info", :locals => { :who => show_reply, :master => show_reply.message.user } %>
+<%=textilize(coderay(show_reply.Description))%>
+	<ul class="functional">
+		<li><%= render :partial => "questions/vote", :locals => { :who => show_reply, :type => "r" } %></li>
+		<li>回复</li>
+	</ul>
 </div>
+<% end %>

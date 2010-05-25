@@ -3,6 +3,23 @@ class MessagesController < ApplicationController
   before_filter :login_required, :load_user
   before_filter :permit_modify, :only => [:new, :edit, :destroy]
 
+  def vote_up
+    @message = Message.find(params[:message_id])
+    @user.vote_for(@message)
+    respond_to do |format|
+      format.js
+      format.html {redirect_to(@question)}
+    end
+  end
+  
+  def vote_down
+    @message = Message.find(params[:message_id])
+    @user.vote_against(@message)
+    respond_to do |format|
+      format.html {redirect_to(@question)}
+      format.js
+    end
+  end
   
   # GET /messages
   # GET /messages.xml
@@ -43,6 +60,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.js
       format.xml  { render :xml => @message }
     end
   end

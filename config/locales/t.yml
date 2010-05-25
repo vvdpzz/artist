@@ -23,24 +23,25 @@
   
   datetime:
     distance_in_words:
+      half_a_minute: "半分钟"
       less_than_x_seconds:
-        one: "1s"
-        other: "{{count}}s"
+        one: "一秒内"
+        other: "{{count}}秒"
       x_seconds:
-        one: "1s"
-        other: "{{count}}s"
+        one: "一秒"
+        other: "{{count}}秒"
       less_than_x_minutes:
-        one: "1m"
-        other: "{{count}}m"
+        one: "一分钟内"
+        other: "{{count}}分钟"
       x_minutes:
-        one: "1m"
-        other: "{{count}}m"
+        one: "一分钟"
+        other: "{{count}}分钟"
       about_x_hours:
-        one: "1h"
-        other: "{{count}}h"
+        one: "一小时"
+        other: "{{count}}小时"
       x_days:
-        one: "1d"
-        other: "{{count}}d"
+        one: "一天"
+        other: "{{count}}天"
   
   number:
     format:
@@ -99,4 +100,3 @@
         even: "必须为双数"
   
 
-  

@@ -1,0 +1,10 @@
+<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
+<%=textilize(coderay(show_detail.Description))%>
+	<ul class="functional">
+		<li><%= render :partial => "questions/vote", :locals => { :who => show_detail, :type => "m" } %></li>
+		<li>回复</li>
+	</ul>
+</div>
+<div id="replies">
+	<%= render :partial => "replies/show_reply", :collection => show_detail.replies %>
+</div>

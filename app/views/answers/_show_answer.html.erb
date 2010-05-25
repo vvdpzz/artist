@@ -1,33 +1,9 @@
-<div class="answer" id="answer">
-	<div class="content_vote_body">
-		<div class="content_body">
-			<%=textilize(coderay(show_answer.body))%>
-		</div>
-                <div class="vote_body">
-                        <%= button_to "", { :action => :vote_up,
-                                            :controller => :questions,
-                                            :question_id => show_answer.question.id,
-                                            :answer_id => show_answer.id}, {:class => "vote_up_effect"} %>
-
-                        <div class="vote_count" id="vote_count_<%=  show_answer.id%>">
-                                <%= show_answer.votes_for - show_answer.votes_against %>
-                        </div>
-                        <%= button_to "", { :action => :vote_down,
-                                            :controller => :questions,
-                                            :question_id => show_answer.question.id,
-                                            :answer_id => show_answer.id}, {:class => "vote_down_effect"} %>
-                            <div id="correct_answer_img_<%= show_answer.id %>" class="correct_answer">
-								<%= correct_answer(show_answer) %>
-                            </div>
-                  </div>
-	</div>
-	<%= render :partial => "questions/user_info", :locals => { :who => show_answer } %>
-	<div id="show_answer_comment_<%=  show_answer.id %>" style="clear: both">
-		<%= render :partial => "comments/show_comment", :collection => show_answer.comments %>
-	</div>
-	<%= link_to "#{image_tag('/images/comment.gif',:border => 0)}回复","javascript:void()",
-		:onclick => "commentboxShow(#{show_answer.id});" %>
-	<div id="NScommentbox_<%= show_answer.id %>" style="display: none">
-		<%= render :partial => @comment = Comment.new, :locals => {:answer  => show_answer,:button_name => '回复'} %>
-	</div>
+<% div_for show_answer do %>
+<%= render :partial => "questions/user_info", :locals => { :who => show_answer, :master => show_answer.question.user } %>
+<%=textilize(coderay(show_answer.body))%>
+	<ul class="functional">
+		<li><%= render :partial => "questions/vote", :locals => { :who => show_answer, :type => "a" } %></li>
+		<li>回复</li>
+	</ul>
 </div>
+<% end %>

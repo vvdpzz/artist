@@ -1,22 +1,25 @@
 <% div_for show_message do %>
-<div class="message_top">
-	<div class="message_left">
-		<div class="gravatar">
-			<%= gravatar_for show_message.user %>
+	<div class="statusbox">
+		<div class="status">
+			<div class="vote">
+				<div class="votes">
+					<span class="vote-count">
+						<%= show_message.votes_for - show_message.votes_against %>
+					</span>
+					<div class="vote-count-zi">投票</div>
+				</div>
+			</div>
+			<div class="ans">
+				<strong><%= show_message.replies.size %></strong>
+				<div class="vote-count-zi">回复</div>
+			</div>
 		</div>
 	</div>
-	<div class="message_right">
-		<div class="related_information">
-			<div class="user_name">
-				<%= link_to show_message.user.name, user_messages_url(show_message.user) %>
-			</div>
-			<div class="created_time">
-				<%= time_ago_in_words show_message.created_at %>
-			</div>
-		</div>
-		<div class="message_description">
-			<%= show_message.Description %>
+	<div class="summary">
+		<span class="time"><%= time_ago_in_words show_message.created_at %></span>
+		<h3><%= link_to show_message.user.name, user_messages_url(show_message.user) %></h3>
+		<div class="mainwords">
+			<%= link_to truncate(show_message.Description,length=120), user_message_url(@user,show_message) %>
 		</div>
 	</div>
-</div>
 <% end %>

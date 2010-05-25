@@ -1,7 +1,2 @@
-<div class="top_menu">
-	<div class="menu_button_style" style="float:left;">
-		<%= link_to "后退", questions_url %>
-	</div>
-</div>
 <%= error_messages_for :question %>
-<%= render :partial => @question, :locals => { :button_name => "提交问题"} %>
+<%= render :partial => @question %>

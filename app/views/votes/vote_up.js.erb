@@ -1,0 +1,5 @@
+<% if @vote_type == "question"%>
+  $('#vote_count').html("<%= @question.votes_for - @question.votes_against %>");
+<%else%>
+  $('#vote_count_<%= @answer.id %>').html("<%= @answer.votes_for - @answer.votes_against %>");
+<%end%>

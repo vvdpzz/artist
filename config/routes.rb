@@ -11,8 +11,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resource :user_session
   
-  map.vote_up 'vote_up', :controller => 'questions', :action => 'vote_up'
-  map.vote_down 'vote_down', :controller => 'questions', :action => 'vote_down'
+  map.vote_up 'vote_up', :controller => 'votes', :action => 'vote_up'
+  map.vote_down 'vote_down', :controller => 'votes', :action => 'vote_down'
   
   map.set_correct_answer 'set_correct_answer', :controller => 'questions', :action => 'set_correct_answer'
   map.favorite_question 'favorite_question', :controller => 'questions', :action => 'favorite_question'

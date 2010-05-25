@@ -6,10 +6,22 @@
 		<li>图片</li>
 		<li>视频</li>
 	</ul>
+	<ul class="category_bar_menu" style="float:right;margin-right:20px;">
+		<li style="padding: 0px 10px;">
+			<%= link_to image_tag('/images/star.png',:border => 0), new_question_url %></li>
+		<li style="padding: 0px 10px;">
+			<%= link_to image_tag('/images/new.png',:border => 0), new_question_url %></li>
+	</ul>
 <% end %>
-<div id="messages">
-	<%= render :partial => @message = Message.new, :locals => { :button_name => 'Note'} %>	
+<% content_for :list do %>
+	<div class="sort">
+			<select name="post[person_id]">
+				<option value="1" selected="selected">时间</option>
+				<option value="2">投票</option>
+				<option value="3">浏览</option>
+			</select>
+	</div>
+	<div id="searchbox">
+	</div>
 	<%= render :partial => "show_message", :collection => @messages %>
-</div>
-<div id="message_detail">
-</div>
+<% end %>

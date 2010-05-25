@@ -1,7 +1,29 @@
-<% form_for(@question) do |f| %>
-	<%= f.text_field :title, :class => "textfield_effect" %>
-	<%= f.text_area :detail, :class => "textarea_effect" %>
-	<%= f.text_field :tag_list, :class => "textfield_effect_for_tags" %>
-        <div style="clear: both"></div>
-	<%= f.submit button_name, :class => "button_effect" %>
-<% end %>
+<div class="new-one">
+	<% form_for(@question) do |f| %>
+	<div class="type">
+		<%= f.text_field :title, :class => "tf-title" %>
+		<%= f.text_area :detail, :class => "ta-detail" %>
+		<%= f.text_field :tag_list, :class => "tf-tags" %>
+	</div>
+	<div class="ctrl">
+		<%= f.submit "发布", :class => "btn" %>
+	</div>
+	<% end %>
+</div>
+<div class="tips">
+	<h3>提示</h3>
+	<ul class="tip">
+	<li>确保问题是和编程相关的</li>
+	<li>确保问题是有解的，而不是无休止的讨论</li>
+	<li>确保没有人提过类似的问题</li>
+	<li>简明扼要的描述你的问题</li>
+	<li>注意礼貌</li>
+	</ul>
+	<h3 style="margin-top:10px">技巧</h3>
+	<ul class="tip">
+	<li><xmp style="margin:0"><code lang="ruby">
+Your code here...
+</code></xmp></li>
+	<li>**文字** 加粗</li>
+	</ul>
+</div>

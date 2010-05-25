@@ -1,15 +1,19 @@
-<div class="user_info_border">
-	<div class="user_info">
-		<div class="user_info_grid">
-			<div class="gravatar">
-				<%= gravatar_for who.user %>			
-			</div>
-			<div class="user_name">
-				<%= who.user.name %>	
-			</div>
-		</div>
-		<div class="respond_time">
-			<%= "答于 #{time_ago_in_words who.created_at}前" %>
-		</div>
+<% if who.user == master  -%>
+	<div class="gravatar" style="float:right">
+		<%= gravatar_for who.user, :size => 50 %>
 	</div>
-</div>
+	<div class="userinfo" style="margin-left:0;margin-right:61px">
+		<span class="at-name" style="float:right"><%= link_to "#{who.user.name}", user_messages_url(who.user) %></span>
+		<span class="time" style="float:none;" title="<%= who.created_at.strftime('%B %d, %Y %l:%M %p') %>"><%= time_ago_in_words who.created_at %></span>
+	</div>
+	<div class="mainwords" style="margin-right:61px;">
+<% else -%>
+	<div class="gravatar">
+		<%= gravatar_for who.user, :size => 50 %>
+	</div>
+	<div class="userinfo">
+		<span class="time" title="<%= who.created_at.strftime('%B %d, %Y %l:%M %p') %>"><%= time_ago_in_words who.created_at %></span>
+		<span class="at-name"><%= link_to "#{who.user.name}", user_messages_url(who.user) %></span>
+	</div>
+	<div class="mainwords" style="margin-left:61px">
+<% end -%>

@@ -1,45 +1,17 @@
-<div class="question_content">
-	<div class="question_header">
-		<%=h show_detail.title %>
-		<%= link_to "后退", questions_url %>
-	</div>
-	<div class="content_vote_body">
-		<div class="content_body">
-			<%=textilize(coderay(show_detail.detail))%>
-		</div>
-		<div class="vote_body">
-			<%= button_to "", { :action => :vote_up,
-                                            :question_id => show_detail.id,
-                                            :answer_id => 0}, {:class => "vote_up_effect"} %>
-			<div class="vote_count" id="vote_count">
-				<%= show_detail.votes_for - show_detail.votes_against %>
-			</div>
-			<%= button_to "", { :action => :vote_down,
-                                            :question_id => show_detail.id,
-                                            :answer_id => 0}, {:class => "vote_down_effect"} %>
-                        <div class="favorite_question" id ="favorite_question">
-                          <% if logged_in? -%>
-                              <% if @flag == false %>
-                                 <%= link_to "",{:action => :favorite_question,
-                                                 :controller => :questions,
-                                                 :question_id => show_detail.id,
-                                                 },{:title=>"收藏此问题"} %>
-                              <% else %>
-                                    <%= image_tag("/images/favorite-on.png")%>
-                              <% end %>
-                          <% end -%>
-                        </div>
-		</div>
-	</div>
-	<div class="question_tags">
+<h3 style="margin-bottom:5px"><%= show_detail.title %></h3>
+<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
+	<%=textilize(coderay(show_detail.detail))%>
+	<div class="tags" style="float:right">
 		<%= render :partial => "show_tag", :collection => show_detail.tag_list %>
 	</div>
-	<%= render :partial => "questions/user_info", :locals => { :who => show_detail } %>
+	<ul class="functional">
+		<li><%= render :partial => "questions/vote", :locals => { :who => show_detail, :type => "q" } %></li>
+		<li>回复</li>
+	</ul>
 </div>
 <div id="answers">
-	<div class="top_answers_style"><%= show_detail.answers.size %> 个答案</div>
 	<%= render :partial => "answers/show_answer", :collection => show_detail.answers %>
 </div>
-<div id="answer_form">
-	<%= render :partial => @answer = Answer.new, :locals => { :button_name => '回答' } %>
+<div id="answer-form">
+	<%= render :partial => @answer = Answer.new %>
 </div>
