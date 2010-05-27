@@ -1,6 +1,9 @@
 <% if who.user == master  -%>
 	<div class="gravatar" style="float:right">
 		<%= gravatar_for who.user, :size => 50 %>
+		<div class="vc">
+			<%= who.votes_for - who.votes_against %>
+		</div>
 	</div>
 	<div class="userinfo" style="margin-left:0;margin-right:61px">
 		<span class="at-name" style="float:right"><%= link_to "#{who.user.name}", user_messages_url(who.user) %></span>
@@ -10,6 +13,9 @@
 <% else -%>
 	<div class="gravatar">
 		<%= gravatar_for who.user, :size => 50 %>
+		<div class="vc">
+			<%= who.votes_for - who.votes_against %>
+		</div>
 	</div>
 	<div class="userinfo">
 		<span class="time" title="<%= who.created_at.strftime('%B %d, %Y %l:%M %p') %>"><%= time_ago_in_words who.created_at %></span>

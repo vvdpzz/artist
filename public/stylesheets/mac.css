@@ -100,7 +100,7 @@ a {
 		line-height:1.4; margin:0; padding:0; }
 
 	.tags {
-		float: left; }
+		float: left; margin-top:5px; }
 		.tag {
 			float: left; padding: 3px 4px 1px 5px; margin-right: 7px; line-height: 1.2; color: rgb(85,85,85); background: #E0EAF1; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; }
 
@@ -111,7 +111,7 @@ a {
 	margin-left: 61px; margin-bottom:5px; }
 
 ul.functional {
-	float: left; margin-top:5px; list-style-type: none; }
+	float:left; list-style-type:none; }
 	ul.functional li {
 		display: inline; }
 
@@ -120,8 +120,17 @@ ul.functional {
 
 .mainwords {
 	line-height:1.4; color:#9f927f; }
+	.mainwords p {
+		 min-height:36px; }
 	.mainwords a {
 		color:#9f927f; text-decoration:none; }
+
+#a {	
+	position:static; *position:relative; min-height:36px; *display:block!important;display:table!important; }
+	#b {
+		position:static; *position:absolute; display:table-cell; vertical-align:middle; *display:block; top:50%; width:100%; }
+		#c {
+			position:relative; top:-50%; width:100%; }
 
 #answers {
 	float: left; width: 100%; margin-top:10px;}
@@ -143,6 +152,8 @@ ul.functional {
 	float:left; }
 	.gravatar img {
 		background-color:white; padding:2px; border:1px solid rgb(208, 208, 208); }
+	.gravatar .vc {
+		text-align:center; font-size:19px; color: rgb(128, 129, 133); }
 
 #replies {
 	float: left; width: 100%; margin-top:10px;}

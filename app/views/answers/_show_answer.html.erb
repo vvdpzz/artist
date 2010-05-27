@@ -2,7 +2,6 @@
 <%= render :partial => "questions/user_info", :locals => { :who => show_answer, :master => show_answer.question.user } %>
 <%=textilize(coderay(show_answer.body))%>
 	<ul class="functional">
-		<li><%= render :partial => "questions/vote", :locals => { :who => show_answer, :type => "a" } %></li>
 		<li>回复</li>
 	</ul>
 </div>
