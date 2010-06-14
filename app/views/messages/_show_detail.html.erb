@@ -1,9 +1,11 @@
-<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
-<%=textilize(coderay(show_detail.Description))%>
-	<ul class="functional">
-		<li><%= render :partial => "questions/vote", :locals => { :who => show_detail, :type => "m" } %></li>
-		<li>回复</li>
-	</ul>
+<div class="pop">
+	<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
+	<%=textilize(coderay(show_detail.Description))%>
+</div>
+</div>
+<div class="fc">
+	<span><%= "#{image_tag('/images/re.png',:border => 0,:width => 14)}回复" %></span>
+	<span><%= "#{image_tag('/images/forward.png',:border => 0,:width => 14)}转发" %></span>
 </div>
 <div id="replies">
 	<%= render :partial => "replies/show_reply", :collection => show_detail.replies %>

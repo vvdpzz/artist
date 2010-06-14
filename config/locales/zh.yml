@@ -24,23 +24,23 @@
   datetime:
     distance_in_words:
       less_than_x_seconds:
-        one: "1s"
-        other: "{{count}}s"
+        one: "1秒内"
+        other: "{{count}}秒"
       x_seconds:
-        one: "1s"
-        other: "{{count}}s"
+        one: "1秒"
+        other: "{{count}}s秒"
       less_than_x_minutes:
-        one: "1m"
-        other: "{{count}}m"
+        one: "1分钟"
+        other: "{{count}}分钟"
       x_minutes:
-        one: "1m"
-        other: "{{count}}m"
+        one: "1分钟"
+        other: "{{count}}分钟"
       about_x_hours:
-        one: "1h"
-        other: "{{count}}h"
+        one: "1小时"
+        other: "{{count}}一小时"
       x_days:
-        one: "1d"
-        other: "{{count}}d"
+        one: "1天"
+        other: "{{count}}天"
   
   number:
     format:

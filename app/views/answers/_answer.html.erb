@@ -1,4 +1,6 @@
-<% form_for([@question,@answer]) do |f| -%>
-    <%= f.text_area :body, :class => "ta-detail" %>
-    <%= f.submit "回复" %>
-<% end -%>
+<div class="pop" style="-webkit-border-bottom-left-radius: 8px; -webkit-border-bottom-right-radius: 8px; -moz-border-radius-bottomleft: 8px; -moz-border-radius-bottomright: 8px;border:1px solid #ccc;">
+	<% form_for([@question,@answer]) do |f| -%>
+	    <%= f.text_area :body, :class => "ta-detail" %>
+	    <%= f.submit "回复" %>
+	<% end -%>	
+</div>

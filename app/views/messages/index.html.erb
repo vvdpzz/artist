@@ -1,27 +1,17 @@
 <% content_for :category_bar do %>
-	<ul class="category_bar_menu">
-		<li>消息</li>
-		<li>所有</li>
-		<li>自己</li>
-		<li>图片</li>
-		<li>视频</li>
-	</ul>
-	<ul class="category_bar_menu" style="float:right;margin-right:20px;">
-		<li style="padding: 0px 10px;">
-			<%= link_to image_tag('/images/star.png',:border => 0), new_question_url %></li>
-		<li style="padding: 0px 10px;">
-			<%= link_to image_tag('/images/new.png',:border => 0), new_question_url %></li>
-	</ul>
+<div>
+	<span class="btn">消息</span>
+	<span class="btn">所有</span>
+	<span class="btn">自己</span>
+	<span class="btn">图片</span>
+	<span class="btn">视频</span>
+	<span class="btn">音乐</span>
+</div>
+<div style="float:right">
+	<span class="btn" style="padding:3px"><div class="reload"></div></span>
+	<span class="btn" style="padding:3px"><div class="add"></div></span>
+</div>
 <% end %>
 <% content_for :list do %>
-	<div class="sort">
-			<select name="post[person_id]">
-				<option value="1" selected="selected">时间</option>
-				<option value="2">投票</option>
-				<option value="3">浏览</option>
-			</select>
-	</div>
-	<div id="searchbox">
-	</div>
 	<%= render :partial => "show_message", :collection => @messages %>
 <% end %>

@@ -1,16 +1,16 @@
-<h3 style="margin-bottom:5px"><%= show_detail.title %></h3>
-<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
-	<%=textilize(coderay(show_detail.detail))%>
-	<div class="tags" style="float:right">
-		<%= render :partial => "show_tag", :collection => show_detail.tag_list %>
+<h3 style="margin-bottom:10px"><%= show_detail.title %></h3>
+<div class="pop">
+	<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
+		<%=textilize(coderay(show_detail.detail))%>
+		<div class="tags" style="float:right;margin-top:0;">
+			<%= render :partial => "show_tag", :collection => show_detail.tag_list %>
+		</div>
 	</div>
-	<ul class="functional">
-		<li>回复</li>
-	</ul>
+</div>
+<div class="fc">
+	<span><%= "#{image_tag('/images/re.png',:border => 0,:width => 14)}回复" %></span>
+	<span><%= "#{image_tag('/images/forward.png',:border => 0,:width => 14)}转发" %></span>
 </div>
 <div id="answers">
 	<%= render :partial => "answers/show_answer", :collection => show_detail.answers %>
-</div>
-<div id="answer-form">
-	<%= render :partial => @answer = Answer.new %>
 </div>

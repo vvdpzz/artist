@@ -19,12 +19,8 @@
 	</div>
 	<% if logged_in? -%>
 	<div id="shortcut_bar">
-		<div class="logo"></div>
-		<ul class="shortcut_bar_menu">
-			<li><%= current_user.name %></li>
-			<li><%= link_to '问答', questions_url %></li>
-			<li><%= link_to '消息', user_messages_url(current_user) %></li>
-		</ul>
+		<span class="btn d">问答</span>
+		<span class="btn d">消息</span>
 	</div>
 	<% end -%>
 	<% else -%>

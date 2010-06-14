@@ -11,7 +11,7 @@
 			</div>
 			<div class="ans">
 				<strong><%= show_message.replies.size %></strong>
-				<div class="vote-count-zi">回复</div>
+				<div class="vote-count-zi">响应</div>
 			</div>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 		<span class="time"><%= time_ago_in_words show_message.created_at %></span>
 		<h3><%= link_to show_message.user.name, user_messages_url(show_message.user) %></h3>
 		<div class="mainwords">
-			<%= link_to truncate(show_message.Description,length=120), user_message_url(@user,show_message) %>
+			<%= link_to truncate(show_message.Description,length=100), user_message_url(@user,show_message) %>
 		</div>
 	</div>
 <% end %>
