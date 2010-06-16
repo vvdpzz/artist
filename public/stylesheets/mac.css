@@ -102,6 +102,10 @@ a {
 
 .summary {
 	margin-left: 42px; }
+	.selected {
+		background:url(/images/fontbg.png) repeat-x; }
+		.fontcolor {
+			color:white; }
 	.summary h3 {
 		font-size:16px; margin-bottom:3px;}
 	.summary h3 a {

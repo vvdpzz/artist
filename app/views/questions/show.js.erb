@@ -1,1 +1,5 @@
 $('#content').html("<%= escape_javascript(render :partial => "show_detail", :locals => { :show_detail => @question }) %>");
+$('.question').removeClass('selected');
+$('#question_<%= @question.id %>').addClass('selected');
+$('.question .show-mainwords').children().andSelf().css("color","#9F927F");
+$('#question_<%= @question.id %> .show-mainwords').children().andSelf().css("color","white");
