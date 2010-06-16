@@ -27,7 +27,7 @@ $(document).ready(function(){
 	$('#answer a.set_right_answer').getWithAjax(); //选取正确答案
 	$('#answer form.new_answer_comment').submitWithAjax();//问题答案的评论
 	$('#favorite_question a').getWithAjax();
-	$('h3 a').getWithAjax();
+	$('.show-mainwords a').getWithAjax();
 	$('.mainwords a').getWithAjax();
 	$('#category_bar a').getWithAjax();
 });

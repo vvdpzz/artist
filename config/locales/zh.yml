@@ -24,23 +24,26 @@
   datetime:
     distance_in_words:
       less_than_x_seconds:
-        one: "1秒内"
-        other: "{{count}}秒"
+        one: "1秒内前"
+        other: "{{count}}秒前"
       x_seconds:
-        one: "1秒"
-        other: "{{count}}s秒"
+        one: "1秒前"
+        other: "{{count}}s秒前"
       less_than_x_minutes:
-        one: "1分钟"
-        other: "{{count}}分钟"
+        one: "1分钟前"
+        other: "{{count}}分钟前"
       x_minutes:
-        one: "1分钟"
-        other: "{{count}}分钟"
+        one: "1分钟前"
+        other: "{{count}}分钟前"
       about_x_hours:
-        one: "1小时"
-        other: "{{count}}一小时"
+        one: "1小时前"
+        other: "{{count}}一小时前"
       x_days:
-        one: "1天"
-        other: "{{count}}天"
+        one: "1天前"
+        other: "{{count}}天前"
+      about_x_months:
+        one: "1月前"
+        other: "{{count}}月前"
   
   number:
     format:

@@ -1,6 +1,8 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	margin:0; padding:0; border:0 none; font-size:100%; vertical-align:baseline; background:transparent none repeat scroll 0 0; -moz-background-clip:border; -moz-background-inline-policy:continuous; -moz-background-origin:padding; }
 
+/*html {
+	-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; }*/
 h3 {
 	color: #0077CC; font-size: 16px; font-weight:bold; margin-bottom:5px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
 	h3 a {
@@ -37,9 +39,7 @@ a {
 	border-width: 4px 4px 5px 4px;
 	color: rgb(46, 73, 135);
 	display: inline-block;
-	font-family: Arial;
 	font-size: 13px;
-	font-weight: bold;
 	line-height: 23px;
 	margin: 6px 6px 5px 6px;
 	min-width: 14px;
@@ -61,20 +61,20 @@ a {
 
 
 #content {
-	margin-left:40.8%; padding:10 0 48 0px; }
+	margin-left:515px; padding:10 15 48 0px; }
 
 #list {
-	float: left; width: 38%; padding:0 0 44 0px; margin-top:-4px; }
+	float: left; width: 500px; padding:0 0 44 0px; margin-top:-4px; -webkit-box-sizing:border-box; }
 
 .question, .message {
-	float: left; width: 100%; padding: 10px; border-top: 1px solid #ccc; border-right:1px solid #ccc; /*background: rgb(245, 247, 251);*/ background:white; }
+	-webkit-box-sizing:border-box; float: left; width: 100%; padding: 10px; border-top: 1px solid #ccc; border-right:1px solid #ccc; /*background: rgb(245, 247, 251);*/ background:white; }
 	.question:last-child, .message:last-child {
 		border-bottom: 1px solid #ccc; }
 
 .pop {
-	float:left; width:95%; padding:10px; border: 1px solid rgb(175, 177, 184); border-bottom:none; -webkit-box-shadow: rgb(175, 177, 184) 0px 0px 2px; background-color:white; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; }
+	-webkit-box-sizing:border-box; float:left; width:100%; padding:10px; border: 1px solid rgb(175, 177, 184); border-bottom:none; -webkit-box-shadow: rgb(175, 177, 184) 0px 0px 2px; background-color:white; -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px; -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px; }
 	.fc {
-		float:left; width:95%; padding:10px; height:14px; color:#78a3f5; font-size:14px; border: 1px solid rgb(175, 177, 184); border-top: none; -webkit-box-shadow: rgb(175, 177, 184) 0px 0px 2px; background: url(/images/fc.png) repeat-x; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px; -moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px; }
+		-webkit-box-sizing:border-box; float:left; width:100%; padding:10px; height:35px; color:#78a3f5; font-size:14px; border: 1px solid rgb(175, 177, 184); border-top: none; -webkit-box-shadow: rgb(175, 177, 184) 0px 0px 2px; background: url(/images/fc.png) repeat-x; -webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px; -moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px; }
 		.fc img {
 			padding:0 3px;
 		}
@@ -101,7 +101,7 @@ a {
 		color:#999999; padding-top:4px; text-align:center; }
 
 .summary {
-	margin-left: 62px; }
+	margin-left: 42px; }
 	.summary h3 {
 		font-size:16px; margin-bottom:3px;}
 	.summary h3 a {
@@ -130,6 +130,8 @@ ul.functional {
 	color:#0077CC; font-size:14px; }	
 .show-mainwords {
 	color:#9f927f; }
+	.show-mainwords a {
+		color:#9f927f; text-decoration:none; }
 
 .mainwords {
 	line-height:1.4; color:#9f927f; font-size:14px; }

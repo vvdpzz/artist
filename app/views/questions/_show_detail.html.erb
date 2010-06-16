@@ -1,4 +1,3 @@
-<h3 style="margin-bottom:10px"><%= show_detail.title %></h3>
 <div class="pop">
 	<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
 		<%=textilize(coderay(show_detail.detail))%>

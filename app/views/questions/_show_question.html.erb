@@ -1,25 +1,8 @@
 <% div_for show_question do %>
-<div class="statusbox">
-	<div class="status">
-		<div class="vote">
-			<div class="votes">
-				<span class="vote-count">
-					<%= show_question.votes_for - show_question.votes_against %>
-				</span>
-				<div class="vote-count-zi">投票</div>
-			</div>
-		</div>
-		<div class="ans">
-			<strong><%= show_question.answers.size %></strong>
-			<div class="vote-count-zi">响应</div>
-		</div>
-	</div>
-</div>
 <div class="summary">
-	<span class="time"><%= time_ago_in_words show_question.created_at %></span>
-	<h3><%= link_to show_question.user.name, user_messages_url(show_question.user) %> - <%= link_to show_question.title, question_path(show_question) %></h3>
 	<div class="excerpt">
-		<span class="show-mainwords"><%= truncate(show_question.detail,length=78) %></span>
+		<span class="at-name"><%= link_to show_question.user.name, user_messages_url(show_question.user) %></span>
+		<span class="show-mainwords"> - <%= link_to truncate(show_question.detail,length=50), question_url(show_question) %></span>
 		<span style="float:right;color:#c0c0c0;"><%= show_question.view %>阅</span>
 	</div>
 	<div class="tags">
