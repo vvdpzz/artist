@@ -23,7 +23,6 @@ Rails::Initializer.run do |config|
   config.gem "coderay"
   config.gem "RedCloth"
   config.gem 'thinking-sphinx', :lib => 'thinking_sphinx', :version => '1.3.16'
-  config.gem "peteonrails-vote_fu", :lib => 'vote_fu', :source => 'http://gems.github.com'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
