@@ -3,3 +3,5 @@ $('.question').removeClass('selected');
 $('#question_<%= @question.id %>').addClass('selected');
 $('.question .show-mainwords').children().andSelf().css("color","#9F927F");
 $('#question_<%= @question.id %> .show-mainwords').children().andSelf().css("color","white");
+$('.question .at-name').children().andSelf().css("color","#07C");
+$('#question_<%= @question.id %> .at-name').children().andSelf().css("color","white");

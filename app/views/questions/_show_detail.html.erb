@@ -1,6 +1,6 @@
 <div class="pop">
 	<%= render :partial => "questions/user_info", :locals => { :who => show_detail, :master => show_detail.user } %>
-		<%=textilize(coderay(show_detail.detail))%>
+		<div><%=sanitize textilize(coderay(show_detail.detail))%></div>
 		<div class="tags" style="float:right;margin-top:0;">
 			<%= render :partial => "show_tag", :collection => show_detail.tag_list %>
 		</div>

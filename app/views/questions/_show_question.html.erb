@@ -2,7 +2,7 @@
 <div class="summary">
 	<div class="excerpt">
 		<span class="at-name"><%= link_to show_question.user.name, user_messages_url(show_question.user) %></span>
-		<span class="show-mainwords"> - <%= link_to truncate(show_question.detail,length=50), question_url(show_question) %></span>
+		<span class="show-mainwords"> - <%=sanitize link_to truncate(show_question.detail,length=50), question_url(show_question) %></span>
 		<span style="float:right;color:#c0c0c0;"><%= show_question.view %>阅</span>
 	</div>
 	<div class="tags">
